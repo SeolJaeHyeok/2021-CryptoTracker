@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useQuery } from "react-query";
 import { Helmet } from "react-helmet";
 import { fetchCoins } from "../api";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isDarkAtom } from "../atoms";
 
 const Title = styled.h1`
@@ -55,6 +55,20 @@ const Img = styled.img`
   margin-right: 10px;
 `;
 
+const ToggleTab = styled.span<{ isDark: boolean }>`
+  text-align: center;
+  font-size: 24px;
+  padding: 7px 0px;
+  border-radius: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  /* color: ${(props) =>
+    props.isDark ? props.theme.accentColor : props.theme.textColor};
+  a {
+    display: block;
+  } */
+`;
+
 interface ICoin {
   id: string;
   name: string;
@@ -68,6 +82,7 @@ interface ICoin {
 function Coins() {
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
   const setDarkAtom = useSetRecoilState(isDarkAtom);
+  const isDark = useRecoilValue(isDarkAtom);
   const toggleDarkAtom = () => setDarkAtom((prev) => !prev);
   return (
     <Container>
@@ -76,7 +91,9 @@ function Coins() {
       </Helmet>
       <Header>
         <Title>Coins</Title>
-        <button onClick={toggleDarkAtom}>Toggle</button>
+        <ToggleTab onClick={toggleDarkAtom} isDark={isDark}>
+          {isDark ? "🌝" : "🌚"}
+        </ToggleTab>
       </Header>
       {isLoading ? (
         <Loader>Loading...</Loader>
