@@ -20,9 +20,3 @@ export const fetchCoinHistory = (coinId: string) => {
     `${BASE_URL}/coins/${coinId}/ohlcv/historical?start=${startDate}&end=${endDate}`
   ).then((res) => res.json());
 };
-
-export const fetchTodayPrice = (coinId: string) => {
-  return fetch(`${BASE_URL}/coins/${coinId}/ohlcv/today/`).then((res) =>
-    res.json()
-  );
-};
