@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/2021-CryptoTracker/static/js/main.ebf13b03.chunk.js",
-    "main.js.map": "/2021-CryptoTracker/static/js/main.ebf13b03.chunk.js.map",
+    "main.js": "/2021-CryptoTracker/static/js/main.ab111b8a.chunk.js",
+    "main.js.map": "/2021-CryptoTracker/static/js/main.ab111b8a.chunk.js.map",
     "runtime-main.js": "/2021-CryptoTracker/static/js/runtime-main.462d9eef.js",
     "runtime-main.js.map": "/2021-CryptoTracker/static/js/runtime-main.462d9eef.js.map",
     "static/js/2.1a5ef7b6.chunk.js": "/2021-CryptoTracker/static/js/2.1a5ef7b6.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.462d9eef.js",
     "static/js/2.1a5ef7b6.chunk.js",
-    "static/js/main.ebf13b03.chunk.js"
+    "static/js/main.ab111b8a.chunk.js"
   ]
 }
